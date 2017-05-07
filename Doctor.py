@@ -279,7 +279,7 @@ if __name__ == "__main__":
     
     sleep(5)
     
-    f= open("Medical Record.txt","w+")
+    f= open("index.html","w+")
     f.write("Patient's History/n ")
     f.write("Diagnosis:  ")
     f.write(diagnosis)
