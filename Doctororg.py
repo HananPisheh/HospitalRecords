@@ -324,12 +324,12 @@ if __name__ == "__main__":
     
     # Write info to text file
     f= open("index.html","a")
-    f.write("Patient's History\n")
-    f.write("Patients Name: Hanan Pisheh")
-    f.write('Timestamp: {:%Y-%b-%d %H:%M:%S}'.format(datetime.datetime.now()) + "\n")
-    f.write("Diagnosis:  ")
+    f.write("Patient's History                                                       \n")
+    f.write("                    Patients Name: Hanan Pisheh")
+    f.write('                Timestamp: {:%Y-%b-%d %H:%M:%S}'.format(datetime.datetime.now()) + "\n")
+    f.write("                             Diagnosis:  ")
     f.write(diagnosis + "\n")
-    f.write("recommendation:  ")
+    f.write("                               recommendation:  ")
     f.write(recommendation1 + "\n")
 
     f.close()
