@@ -178,7 +178,7 @@ def getDiagnosis(transcript):
     elif "yes" in transcript:
         return "yes", "", ""
 
-    elif "weaning failure" in transcript or "winning failure" in transcript or "renamed failure" in transcript or "failure" in transcript:
+    elif "weaning failure" in transcript or "winning failure" in transcript or "renamed failure" in transcript:
         diagnosis = Alexa_predict + " deep vein thrombosis and septic shock"
         '''***Then connect Alexa to printer/big screen (Shoudn't be hard!) so doctor can point to the picture of weaning failure, 
         deep vein thrombosis, and septic shock to explain to patient what the complication is'''
@@ -202,7 +202,7 @@ def getDiagnosis(transcript):
         diagnosis = Alexa_predict + "septic shock"
         global_recommendation = Alexa_rec + "septic shock consist of fluids and blood pressure support. Warning: Septic shock is a life-threatening condition"
         return diagnosis, global_recommendation, ""
-    elif "reintubation" in transcript:
+    elif "reintubation" in transcript or "reintegration" in transcript:
         diagnosis = Alexa_predict + "weaning failure and myocardial infarction"
         global_recommendation = "General treatments are not applicable. Weaning failure treatment requires tailored treatment strategy from surgeonss. "
         global_recommendation += Alexa_rec + "myocardial infarction ranges from lifestyle changes and cardiac rehabilitation to medications, stens, and bypass surgery"
@@ -346,7 +346,7 @@ if __name__ == "__main__":
     record_to_file('demo.wav')
     answer_transcript = speechToText()
     answer, dumm, dumm2 = getDiagnosis(answer_transcript)
-    if "yes" in answer:
+    if "yes" in answer or "ok" in answer:
         speak(recommendation1)
         speakWithPython()
     else:
